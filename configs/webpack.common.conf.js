@@ -34,7 +34,7 @@ const getEntryFileContent = (source, routerpath) => {
 }
 
 const getRouterFileContent = (source) => {
-  const dependence = `import Vue from 'vue'\n`;
+  const dependence = ``; // import Vue from 'vue'\n
   let routerContents = fs.readFileSync(source).toString();
   routerContents = dependence + routerContents;
   return routerContents;
