@@ -5,6 +5,7 @@
                 <image class="image" resize="cover" :src="img.pictureUrl"></image>
                 <text class="text-style">{{img.title}}</text>
             </div>
+            <indicator class="indicator"></indicator>
         </slider>
     </div>
 </template>
@@ -59,6 +60,17 @@
         flex: 1;
         color: #808080;
         font-size: 50;
+    }
+
+    .indicator {
+        width: 750px;
+        height: 40px;
+        item-color: green;
+        item-selected-color: #b4282d;
+        item-size: 12px;
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
     }
     
 </style>
