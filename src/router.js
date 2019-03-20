@@ -7,14 +7,14 @@ Vue.use(Router)
 export const router = new Router({
   routes: [
     {
-      path: '/slider',
+      path: '/',
       name: 'HelloWeex',
-      component: HelloWeex
+      component: SliderList
     },
     {
-      path: '/',
+      path: '/slider',
       name: 'SliderList',
-      component: SliderList
+      component: HelloWeex
     }
   ]
 })

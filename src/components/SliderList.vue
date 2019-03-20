@@ -1,86 +1,64 @@
 <template>
-    <div style="flex-direction: column;">
-        <slider class="slider" :interval="intervalValue" auto-play="true">
-            <div class="slider-pages" v-for="(item, index) in itemList" :key="index" @click="goWeexSite">
-                <image class="thumb" :src="item.pictureUrl"></image>
-                <text class="title">{{item.title}}</text>
+    <div>
+        <slider class="slider" interval="3000" auto-play="true" show-indicators="true">
+            <div class="frame" v-for="(img, index) in imageList" :key="index">
+                <image class="image" resize="cover" :src="img.pictureUrl"></image>
+                <text class="text-style">{{img.title}}</text>
             </div>
         </slider>
-        <!-- <div class="container" @click="goWeexSite">
-            <div class="cell">
-                <image class="thumb" src="static/resources/images/js.png"></image>
-                <text class="title">JavaScript</text>
-            </div>
-            <div class="cell">
-                <image class="thumb" src="static/resources/images/java.png"></image>
-                <text class="title">Java</text>
-            </div>
-            <div class="cell">
-                <image class="thumb" src="static/resources/images/obj-c.png"></image>
-                <text class="title">Objective C</text>
-            </div>
-        </div> -->
     </div>
 </template>
 <script>
-/*eslint-disable */
-export default {
-  data() {
-    return {
-      intervalValue: '1000',
-      isShowIndicators: 'true',
-      isAutoPlay: 'true',
-      itemList: [
-      {
-        title: 'Java',
-        pictureUrl: 'static/resources/images/java.png'
-      },
-      {
-        title: 'Objective C',
-        pictureUrl: 'static/resources/images/obj-c.png'
-      },
-      {
-        title: 'JavaScript',
-        pictureUrl: 'static/resources/images/js.png'
-      }]
+/* eslint-disable */
+    export default {
+        data() {
+            return {
+                imageList: [
+                    {
+                        title: 'Java',
+                        pictureUrl: 'static/resources/images/java.png'
+                    }, {
+                        title: 'Objective C',
+                        pictureUrl: 'static/resources/images/obj-c.png'
+                    }, {
+                        title: 'JavaScript',
+                        pictureUrl: 'static/resources/images/js.png'
+                    }
+                ]
+            }
+        }
     }
-  },
-  methods: {
-    goWeexSite: function () {
-      this.$openURL('http://alibaba.github.io/weex/')
-    }
-  }
-}
 </script>
-<style>
-    .cell {
-        margin-top: 30px;
-        margin-left: 10px;
+<style scoped="scoped">
+     .frame {
+        width: 700px;
+        height: 230px;
+        position: relative;
         flex-direction: row;
-        border-width:  1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slider {
+        margin-top: 25px;
+        margin-left: 25px;
+        width: 700px;
+        height: 230px;
+        border-width: 2px;
         border-style: solid;
-        border-color: #cccccc;
-        border-radius: 10px;
+        border-color: #41B883;
+        border-radius: 16px;
     }
-    .thumb {
-        width: 200px;
-        height: 200px;
+    .image {
+        width: 230px;
+        height: 230px;
     }
-    .title {
+
+    .text-style {
         text-align: center;
-        line-height: 200px;
         flex: 1;
         color: #808080;
         font-size: 50;
     }
-    .slider {
-        margin: 18;
-        width: 714;
-        height: 230;
-    }
-    .slider-pages {
-        flex-direction: row;
-        width: 714;
-        height: 200;
-    }
+    
 </style>
